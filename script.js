@@ -69,4 +69,10 @@ fetchSeriesData();
    player.stopVideo();
  }
 
- 
+ function onPlayerReady(event) {
+    // You can control the player here
+    // For example, load a new video when a button is clicked
+    document.getElementById('changeVideoButton').addEventListener('click', function () {
+        player.loadVideoById('NEW_VIDEO_ID');
+    });
+}
