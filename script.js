@@ -54,7 +54,7 @@ fetchSeriesData();
  function onPlayerReady(event) {
    event.target.playVideo();
  }
-
+ 
  // 5. The API calls this function when the player's state changes.
  //    The function indicates that when playing a video (state=1),
  //    the player should play for six seconds and then stop.
@@ -68,3 +68,10 @@ fetchSeriesData();
  function stopVideo() {
    player.stopVideo();
  }
+
+ function onPlayerReady(event) {
+	document.getElementById('changeVideoButton').addEventListener('click', function () {
+		player.loadVideoById('NEW_VIDEO_ID');
+	});
+}
+
