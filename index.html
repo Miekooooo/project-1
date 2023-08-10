@@ -6,26 +6,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="player"></div>
     <body>
         <header>
-            <h1>ShelfMovies</h1>
-        </header>
-        <nav>
-            <nav class="navbar">
+            <h1>SHELFMOVIES</h1>
+            <nav id = "search-movies">
+                <input type="text" placeholder = "Search Movie">
+                <button id = "search-btn">Search</button>
             </nav>
+        </header>
+        <nav id = "nav-list" class = "navbar">
 
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Movies</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Movies</a></li>
+                <li><a href="#" class="nav-link">About</a></li>
                 <!-- Add more navigation links if needed -->
             </ul>
+
         </nav>
-        <div id="player"></div>
         <body>
             <!-- Header and Navigation code here -->
             <button id="changeVideoButton">Change Video</button>
-
+            
             <section>
                 <h2>Movie Title 1</h2>
                 <img src="path_to_movie_image.jpg" alt="Movie Poster">
