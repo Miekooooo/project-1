@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", async function() {
+  const apiKey = '4735d31250msh2b8b785e5128f79p19e220jsn494a51118e18';
   const baseUrl = "https://moviesdatabase.p.rapidapi.com";
 
-  const section = document.querySelector(".textContent");
-  const titleElement = section.querySelector("h2");
-  const imageElement = section.querySelector("img");
-  const descriptionElement = section.querySelector(".movieDescription");
+  const titleElements = document.querySelectorAll(".textContent h2");
+  const descriptionElements = document.querySelectorAll(".movieDescription");
+  const imageElements = document.querySelectorAll("img");
 
-  const movieTitle = titleElement.textContent;
-  const apiUrl = `${baseUrl}/search?title=${encodeURIComponent(movieTitle)}`;
+  const listQueryParam = "popular"; // Replace with your desired list from Utils - Titles Lists
+  const apiUrl = `${baseUrl}/titles?list=${listQueryParam}`;
   const options = {
       method: 'GET',
       headers: {
@@ -18,18 +18,29 @@ document.addEventListener("DOMContentLoaded", async function() {
 
   try {
     const response = await fetch(apiUrl, options);
-    const data = await response.json();
-
-    if (data.length > 0) {
-        const movieInfo = data[0];
-        imageElement.src = movieInfo.poster_url;
-        descriptionElement.textContent = movieInfo.description;
+    const responseData = await response.json();
+  
+    console.log(responseData); // Log the API response for debugging
+  
+    if (responseData && responseData.titles && responseData.titles.length > 0) {
+      const titlesData = responseData.titles;
+      titlesData.forEach(async (movieInfo, index) => {
+        if (index < titleElements.length) {
+          titleElements[index].textContent = movieInfo.title;
+          descriptionElements[index].textContent = movieInfo.description;
+          imageElements[index].src = movieInfo.poster_url;
+        }
+      });
     } else {
-        descriptionElement.textContent = "Movie not found.";
+      descriptionElements.forEach(descriptionElement => {
+        descriptionElement.textContent = "No movie titles found.";
+      });
     }
   } catch (error) {
     console.error("Error fetching movie data:", error);
-    descriptionElement.textContent = "Error fetching movie data.";
+    descriptionElements.forEach(descriptionElement => {
+      descriptionElement.textContent = "Error fetching movie data.";
+    })
   }
 });
 
