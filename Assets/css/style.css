@@ -45,6 +45,11 @@ input {
     background-color: red;
 }
 
+.nav-link:hover {
+    color: black;
+}
+
+
 #search-btn{
     background-color: rgb(240, 81, 81);
     border-radius: 5px;
