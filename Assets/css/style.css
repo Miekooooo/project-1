@@ -5,7 +5,6 @@ body {
 }
 
 header {
-    background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -40,13 +39,14 @@ input {
     opacity: 1;
 }
 
-
-.nav-bar{
-    background-color: red;
+.nav-link{
+    font-weight: bold;
+    color: black;
+    margin: 60px;
 }
 
 .nav-link:hover {
-    color: black;
+    color: red;
 }
 
 
@@ -63,8 +63,12 @@ nav ul {
 }
 
 #nav-list {
-    background-color: #D72424;
+    background-image: url(/Assets/popcorn.jpg);
+    background-size: cover;
     padding: 15px;
+    box-shadow: 5px 10px 10px black;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav li {
