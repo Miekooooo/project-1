@@ -9,7 +9,7 @@ header {
     color: #fff;
     text-align: center;
     padding: 10px;
-    background-color: rgb(187, 19, 19);
+    background-color: #A40505;
     text-align: left;
     display: flex;
     justify-content: space-between;
@@ -18,23 +18,21 @@ header {
 
 h1 {
     font-family: 'Major Mono Display', 'Times New Roman', Times, serif;
-    font-weight: 10;
     line-height: 40px;
     size: 40px;
-}
-
-#bold {
-    font-weight: bold;
+    text-shadow: 8px 8px 10px black;
 }
 
 #search-movies {
-    background-color: rgb(187, 19, 19);
+    background-color: #A40505;
 }
 
 input {
     height: 20px;
-    background-color: rgb(177, 41, 41);
-    color: white
+    background-color: #832020;
+    color: white;
+    border-radius: 10px;
+    border-color: black;
 }
 
 ::placeholder {
@@ -42,13 +40,15 @@ input {
     opacity: 1;
 }
 
-nav {
-    background-color: #444;
-    padding: 5px;
-}
 
 .nav-bar{
     background-color: red;
+}
+
+#search-btn{
+    background-color: rgb(240, 81, 81);
+    border-radius: 5px;
+    border-color: black;
 }
 
 nav ul {
@@ -59,6 +59,7 @@ nav ul {
 
 #nav-list {
     background-color: #D72424;
+    padding: 15px;
 }
 
 nav li {
@@ -78,4 +79,19 @@ section {
 
 section h2 {
     margin-bottom: 10px;
+}
+
+section div {
+    display: inline;
+}
+
+html{
+    background-image: linear-gradient(red, black);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+body{
+    color: white;
 }
