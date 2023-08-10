@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '4735d31250msh2b8b785e5128f79p19e220jsn494a51118e18'
+                'X-RapidAPI-Key': '4735d31250msh2b8b785e5128f79p19e220jsn494a51118e18',
                 'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
             }
         };
