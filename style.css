@@ -16,6 +16,11 @@ header {
     align-items: center;
 }
 
+#player{
+    
+}
+
+
 h1 {
     font-family: 'Major Mono Display', 'Times New Roman', Times, serif;
     font-weight: 10;
@@ -47,7 +52,7 @@ nav {
     padding: 5px;
 }
 
-.nav-bar{
+.navbar{
     background-color: red;
 }
 
