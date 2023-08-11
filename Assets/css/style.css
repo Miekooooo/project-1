@@ -20,6 +20,15 @@ h1 {
     text-shadow: 8px 8px 10px black;
 }
 
+#youtube-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+#playerDescription {
+    
+}
+
 #search-movies {
     background-color: #A40505;
 }
