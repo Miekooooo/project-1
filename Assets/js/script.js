@@ -25,6 +25,15 @@ document.addEventListener("DOMContentLoaded", async function() {
   }
 });
 
+const moviePosters = document.querySelectorAll(".moviePoster");
+
+    moviePosters.forEach(moviePoster => {
+        moviePoster.addEventListener("click", function() {
+            const videoId = this.getAttribute("data-video-id");
+            player.loadVideoById(videoId);
+        });
+    });
+
 // Load YouTube Player API asynchronously
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
@@ -69,6 +78,6 @@ function stopVideo() {
   player.stopVideo();
 }
 
-document.getElementById('changeVideoButton').addEventListener('click', function () {
-  player.loadVideoById('NEW_VIDEO_ID');
-});
+// document.getElementById('changeVideoButton').addEventListener('click', function () {
+  // player.loadVideoById('NEW_VIDEO_ID');
+// });
