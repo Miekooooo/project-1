@@ -3,9 +3,7 @@ body {
     margin: 0;
     padding: 0;
 }
-
 header {
-    background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px;
@@ -15,12 +13,15 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-
 h1 {
     font-family: 'Major Mono Display', 'Times New Roman', Times, serif;
     line-height: 40px;
     size: 40px;
     text-shadow: 8px 8px 10px black;
+}
+
+#search-movies {
+    background-color: #A40505;
 }
 
 #search-movies {
@@ -40,9 +41,30 @@ input {
     opacity: 1;
 }
 
+.navbar{
+    background-color: black;
+}
 
-.nav-bar{
-    background-color: red;
+
+.nav-link:hover {
+    color: black;
+}
+.nav-link {
+    font-weight: bold;
+    color: black;
+    margin: 60px;
+}
+
+.nav-link:hover {
+    color: red;
+}
+
+
+#search-btn{
+    background-color: rgb(224, 98, 98);
+    border-radius: 5px;
+    border-color: black;
+    color: white;
 }
 
 #search-btn{
@@ -58,20 +80,22 @@ nav ul {
 }
 
 #nav-list {
-    background-color: #D72424;
+    background-image: url(/Assets/popcorn.jpg);
+    background-size: cover;
     padding: 15px;
+    box-shadow: 5px 10px 10px black;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav li {
     display: inline;
     margin-right: 20px;
 }
-
 nav a {
     color: #fff;
     text-decoration: none;
 }
-
 section {
     padding: 20px;
     border-bottom: 1px solid #ddd;
@@ -85,11 +109,19 @@ section div {
     display: inline;
 }
 
+section h2 {
+    margin-bottom: 10px;
+}
+
 html{
     background-image: linear-gradient(red, black);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+}
+
+body{
+    color: white;
 }
 
 body{
