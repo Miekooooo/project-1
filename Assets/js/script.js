@@ -16,16 +16,19 @@ document.addEventListener("DOMContentLoaded", async function() {
     const movieInfo = responseData.results;
     
     for(let i = 0; i < movieInfo.length; i++) {
-      const movieHeader = document.createElement("h2")
+      const movieCard = document.createElement("div")
+      movieCard.setAttribute("class", "movieCard")
       const movieImg = document.createElement("img")
+      const movieHeader = document.createElement("h2")
       const movieDescription = document.createElement("p")
-      movieHeader.innerHTML = movieInfo[i].title;
       movieImg.setAttribute("src", `https://image.tmdb.org/t/p/w300${movieInfo[i].poster_path}`)
       movieImg.setAttribute("alt", movieInfo[i].title)
+      movieHeader.innerHTML = movieInfo[i].title;
       movieDescription.innerHTML = movieInfo[i].overview
-      movieInfoContainer.append(movieHeader)
-      movieInfoContainer.append(movieImg)
-      movieInfoContainer.append(movieDescription)
+      movieCard.append(movieImg)
+      movieCard.append(movieHeader)
+      movieCard.append(movieDescription)
+      movieInfoContainer.append(movieCard)
     }
   } catch (error) {
     console.error("Error fetching movie data:", error);
