@@ -128,3 +128,7 @@ body{
 body{
     color: white;
 }
+
+footer{
+    display: block;
+}
