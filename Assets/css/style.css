@@ -146,6 +146,18 @@ footer{
     text-align: center;
 }
 
+.hide{
+    display: none;
+}
+
+.movieCard:hover .hide{
+    display: block;
+}
+
+.moviePoster:hover{
+    cursor: pointer;
+    box-shadow: 10px 15px 15px black;
+}
 
 @media screen and (max-width: 1200px) {
     .textContent {

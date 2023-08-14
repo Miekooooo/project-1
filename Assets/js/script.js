@@ -21,8 +21,10 @@ document.addEventListener("DOMContentLoaded", async function() {
       const movieImg = document.createElement("img")
       const movieHeader = document.createElement("h2")
       const movieDescription = document.createElement("p")
+      movieDescription.setAttribute("class", "hide")
       movieImg.setAttribute("src", `https://image.tmdb.org/t/p/w300${movieInfo[i].poster_path}`)
       movieImg.setAttribute("alt", movieInfo[i].title)
+      movieImg.setAttribute("class", "moviePoster")
       movieHeader.innerHTML = movieInfo[i].title;
       movieDescription.innerHTML = movieInfo[i].overview
       movieCard.append(movieImg)
