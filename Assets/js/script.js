@@ -2,9 +2,10 @@ document.addEventListener("DOMContentLoaded", async function() {
   const apiKey = '21281ea7c62b9064284d6b1f71ae90bf';
   const baseUrl = "https://api.themoviedb.org/3";
 
-  const titleElements = document.querySelectorAll(".textContent h2");
-  const descriptionElements = document.querySelectorAll(".movieDescription");
-  const imageElements = document.querySelectorAll(".textContent img");
+  //const titleElements = document.querySelectorAll(".textContent h2");
+  //const imageElements = document.querySelectorAll(".textContent img");
+  //const descriptionElements = document.querySelectorAll(".movieDescription");
+  const movieInfoContainer = document.querySelector(".textContent")
 
   // Set up the API URL
   const apiUrl = `${baseUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
@@ -12,14 +13,23 @@ document.addEventListener("DOMContentLoaded", async function() {
   try {
     const response = await fetch(apiUrl);
     const responseData = await response.json();
-
-    responseData.results.forEach((movieInfo, index) => {
-      if (index < titleElements.length) {
-        titleElements[index].textContent = movieInfo.title;
-        descriptionElements[index].textContent = movieInfo.overview;
-        imageElements[index].src = `https://image.tmdb.org/t/p/w300${movieInfo.poster_path}`;
-      }
-    });
+    const movieInfo = responseData.results;
+    
+    for(let i = 0; i < movieInfo.length; i++) {
+      const movieCard = document.createElement("div")
+      movieCard.setAttribute("class", "movieCard")
+      const movieImg = document.createElement("img")
+      const movieHeader = document.createElement("h2")
+      const movieDescription = document.createElement("p")
+      movieImg.setAttribute("src", `https://image.tmdb.org/t/p/w300${movieInfo[i].poster_path}`)
+      movieImg.setAttribute("alt", movieInfo[i].title)
+      movieHeader.innerHTML = movieInfo[i].title;
+      movieDescription.innerHTML = movieInfo[i].overview
+      movieCard.append(movieImg)
+      movieCard.append(movieHeader)
+      movieCard.append(movieDescription)
+      movieInfoContainer.append(movieCard)
+    }
   } catch (error) {
     console.error("Error fetching movie data:", error);
   }

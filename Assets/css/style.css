@@ -20,15 +20,6 @@ h1 {
     text-shadow: 8px 8px 10px black;
 }
 
-#youtube-section {
-    display: flex;
-    justify-content: space-between;
-}
-
-#playerDescription {
-    
-}
-
 #search-movies {
     background-color: #A40505;
 }
@@ -138,4 +129,32 @@ body{
 
 body{
     color: white;
+}
+
+footer{
+    display: block;
+}
+
+.textContent {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+}
+
+.movieCard {
+    width: 100%;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .textContent {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .textContent {
+        grid-template-columns: auto;
+    }
 }
