@@ -31,6 +31,13 @@ const moviePosters = document.querySelectorAll(".moviePoster");
         moviePoster.addEventListener("click", function() {
             const videoId = this.getAttribute("data-video-id");
             player.loadVideoById(videoId);
+
+            // Update movie name and description
+            const movieIndex = Array.from(moviePosters).indexOf(this);
+            const youtubeMovieTitle = document.querySelector("#hero-section h2");
+            const youtubeMovieDescription = document.querySelector("#hero-section p");
+            youtubeMovieTitle.textContent = titleElements[movieIndex].textContent;
+            youtubeMovieDescription.textContent = descriptionElements[movieIndex].textContent;
         });
     });
 
