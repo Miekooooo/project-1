@@ -9,10 +9,12 @@
         <body>
             <header>
                 <h1>SHELFMOVIES</h1>
-                <nav id="search-movies">
-                    <input type="text" placeholder="Search Movie">
-                    <button id="search-btn">Search</button>
-                </nav>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="search...">
+                    <button id="search-button">Search</button>
+                </div>
+                <div id="search-results">
+                </div>
             </header>
             <nav id="nav-list">
                 <nav class="navbar">
@@ -28,21 +30,15 @@
             </nav>
             <body>
                 <section id="youtube-section">
-                    <section>
-                        <h2>movie name<h2>
-                                <p>description</p>
-                            </section>
-                            <div id="player"></div>
+                        <div id="player"></div>
                         </section>
                         <!-- Header and Navigation code here -->
                         <section class='textContent'>
                         </section>
                         <!-- Add more movie sections as needed -->
-
                     </body>
                 </body>
-
-                <!-- Your website content goes here -->
+                    <!-- Search results will be displayed here -->
                 <script src="./Assets/js/script.js"></script>
             </body>
         </html>
