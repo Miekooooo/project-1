@@ -10,17 +10,27 @@
 3. 
 
 ## Description
-- 
+- This is a simple movie API project that allows users to search for movies and retrieve details and trailer about them. The project is built using HTML, CSS, and JavaScript, and it utilizes a two third-party movie APIs to fetch movie data.
 
 
-- "what was my motivation?" 
-- "why did I build this project?" 
-- "what problem does it solve?" 
-- "what did I learn?" 
+
+- MOTIVATION
+We created this project as a way to practice our skills in working with APIs and asynchronous JavaScript. We wanted to build a simple and user-friendly interface that allows users to search for movies and get relevant information quickly and efficiently.
+- WHY BUILD THIS PROJECT?
+Our main goal as a team was for this project to provide users with an easy-to-use tool to search for movie information and trailer. With so many movies available, it can be overwhelming to keep track of all the details. This project aims to solve that problem by offering a simple and convenient way to access movie data.
+- PROBLEM SOLVED 
+This project addresses the problem of finding detailed information about movies without having to navigate through various websites or applications. By using this movie API, users can get instant access to movie titles, release dates, plot summaries, and more.
+-WHAT We Learned
+Through this project, I learned how to make API requests using JavaScript's fetch() function and handle the asynchronous nature of these requests. I also gained experience in parsing and displaying JSON data in a user-friendly manner on a web page. Additionally, I improved my HTML and CSS skills by creating a clean and responsive design for the project.
+
 
 ## Features
 
-- 
+-Search for movies using keywords
+-Display movie details such as title, release date, and plot summary
+-Responsive design that works well on various screen sizes
+-User-friendly interface with clear search results
+
 - 
 - 
 
