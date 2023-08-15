@@ -62,14 +62,14 @@ input {
 }
 
 
-#search-btn{
+#search-button{
     background-color: rgb(224, 98, 98);
     border-radius: 5px;
     border-color: black;
     color: white;
 }
 
-#search-btn{
+#search-button{
     background-color: rgb(240, 81, 81);
     border-radius: 5px;
     border-color: black;
@@ -158,6 +158,7 @@ footer{
     cursor: pointer;
     box-shadow: 10px 15px 15px black;
 }
+
 
 @media screen and (max-width: 1200px) {
     .textContent {

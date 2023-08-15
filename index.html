@@ -21,19 +21,19 @@
                 </nav>
 
                 <ul>
-                    <li><a href="#" class="nav-link">Home</a></li>
-                    <li><a href="#" class="nav-link">Movies</a></li>
-                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link" id = "homeBtn" onClick="reload()">Home</a></li>
+                    <li><a href="#movies" class="nav-link">Movies</a></li>
+                    <li><a href="#footer" class="nav-link">About</a></li>
                     <!-- Add more navigation links if needed -->
                 </ul>
 
             </nav>
             <body>
-                <section id="youtube-section">
+                <section id="youtube-section" class="hide">
                         <div id="player"></div>
                         </section>
                         <!-- Header and Navigation code here -->
-                        <section class='textContent'>
+                        <section class='textContent' id="movies">
                         </section>
                         <!-- Add more movie sections as needed -->
                     </body>
@@ -44,4 +44,4 @@
         </html>
 
         <!-- <button id="changeVideoButton">Change Video</button> -->
-        <footer>SHELFMOVIES 2023</footer>
+        <footer id="footer">SHELFMOVIES 2023</footer>
