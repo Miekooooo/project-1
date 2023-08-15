@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function() {
   const apiKey = '21281ea7c62b9064284d6b1f71ae90bf';
   const baseUrl = "https://api.themoviedb.org/3";
+  var player;
 
   //const titleElements = document.querySelectorAll(".textContent h2");
   //const imageElements = document.querySelectorAll(".textContent img");
@@ -48,10 +49,11 @@ document.addEventListener("DOMContentLoaded", async function() {
     const response = await fetch(apiUrl);
     const responseData = await response.json();
     const movieInfo = responseData.results;
-    
+
     for(let i = 0; i < movieInfo.length; i++) {
       const movieCard = document.createElement("div")
       movieCard.setAttribute("class", "movieCard")
+      movieCard.setAttribute("data-movie-id", movieInfo[i].id)
       const movieImg = document.createElement("img")
       const movieHeader = document.createElement("h2")
       const movieDescription = document.createElement("p")
@@ -69,6 +71,48 @@ document.addEventListener("DOMContentLoaded", async function() {
   } catch (error) {
     console.error("Error fetching movie data:", error);
   }
+
+  // Function to fetch movie details and trailer
+  async function fetchMovieDetails(movieId, callback) {
+    const detailsUrl = `${baseUrl}/movie/${movieId}/videos?api_key=${apiKey}&language=en-US`;
+    try {
+      const response = await fetch(detailsUrl);
+      const movieDetails = await response.json();
+      console.log(movieDetails)
+      // Check if the movie has videos (trailers)
+      if (movieDetails.results && movieDetails.results.length > 0) {
+        let trailerKey;
+        for(let i = 0; i < movieDetails.results.length; i++){
+          if(movieDetails.results[i].type === "Trailer"){
+            trailerKey = movieDetails.results[i].key;
+          }
+        }
+        
+        // Assuming the first video is the trailer
+        callback(trailerKey); // Call the callback with the video ID
+      } else {
+        console.log("No trailers found for this movie.");
+      }
+    } catch (error) {
+      console.error("Error fetching movie details:", error);
+    }
+  }
+  // Attach click event listeners to movie cards
+  movieInfoContainer.addEventListener('click', (event) => {
+    const clickedMovieCard = event.target.closest('.movieCard');
+
+    if (clickedMovieCard) {
+      var player = document.getElementById("youtube-section");
+      player.classList.remove("hide");
+      window.scrollTo(0, 0);
+      const movieId = clickedMovieCard.getAttribute('data-movie-id');
+      // Update the player with the trailer of the clicked movie
+      fetchMovieDetails(movieId, (trailerKey) => {
+        updatePlayer(trailerKey);
+      });
+    }
+  });
+
 
   const movieCards = document.querySelectorAll('.movieCard');
 
@@ -95,12 +139,11 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 // This function creates an <iframe> (and YouTube player)
 // after the API code downloads.
-var player;
-function onYouTubeIframeAPIReady() {
+function onYouTubeIframeAPIReady(trailerKey) {
   player = new YT.Player('player', {
     height: '390',
     width: '640',
-    videoId: 'M7lc1UVf-VE',
+    videoId: 'of-fPvDLsVE',
     playerVars: {
       'playsinline': 1
     },
@@ -109,6 +152,10 @@ function onYouTubeIframeAPIReady() {
       'onStateChange': onPlayerStateChange
     }
   });
+}
+
+function updatePlayer(trailerKey) {
+  player.loadVideoById(trailerKey);
 }
 
 // The API will call this function when the video player is ready.
@@ -122,7 +169,7 @@ function onPlayerReady(event) {
 var done = false;
 function onPlayerStateChange(event) {
   if (event.data == YT.PlayerState.PLAYING && !done) {
-    setTimeout(stopVideo, 6000);
+    setTimeout(stopVideo, 600000);
     done = true;
   }
 }
@@ -130,6 +177,11 @@ function onPlayerStateChange(event) {
 function stopVideo() {
   player.stopVideo();
 }
+
+function reload() {
+  window.location.reload();
+}
+
 
 //document.getElementById('changeVideoButton').addEventListener('click', function () {
   //player.loadVideoById('NEW_VIDEO_ID');
