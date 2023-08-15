@@ -38,6 +38,23 @@ document.addEventListener("DOMContentLoaded", async function() {
   } catch (error) {
     console.error("Error fetching movie data:", error);
   }
+
+  const movieCards = document.querySelectorAll('.movieCard');
+
+  const searchInput = document.getElementById('search-input'); // Define searchInput here
+  
+  searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+  
+    movieCards.forEach(movieCard => {
+      const movieTitle = movieCard.querySelector('.moviePoster').getAttribute('alt').toLowerCase();
+      if (movieTitle.includes(searchTerm)) {
+        movieCard.style.display = 'block';
+      } else {
+        movieCard.style.display = 'none';
+      }
+    });
+  });
 });
 
 // Load YouTube Player API asynchronously
@@ -84,6 +101,6 @@ function stopVideo() {
   player.stopVideo();
 }
 
-document.getElementById('changeVideoButton').addEventListener('click', function () {
-  player.loadVideoById('NEW_VIDEO_ID');
-});
+//document.getElementById('changeVideoButton').addEventListener('click', function () {
+  //player.loadVideoById('NEW_VIDEO_ID');
+//});
