@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", async function() {
     for(let i = 0; i < movieInfo.length; i++) {
       const movieCard = document.createElement("div")
       movieCard.setAttribute("class", "movieCard")
+      const movieImgSource = document.createElement("a")
+      movieImgSource.setAttribute("href", "#")
       const movieImg = document.createElement("img")
       const movieHeader = document.createElement("h2")
       const movieDescription = document.createElement("p")
@@ -27,6 +29,7 @@ document.addEventListener("DOMContentLoaded", async function() {
       movieImg.setAttribute("class", "moviePoster")
       movieHeader.innerHTML = movieInfo[i].title;
       movieDescription.innerHTML = movieInfo[i].overview
+      movieImgSource.appendChild(movieImg)
       movieCard.append(movieImg)
       movieCard.append(movieHeader)
       movieCard.append(movieDescription)
