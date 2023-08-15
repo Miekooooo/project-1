@@ -6,7 +6,41 @@ document.addEventListener("DOMContentLoaded", async function() {
   //const imageElements = document.querySelectorAll(".textContent img");
   //const descriptionElements = document.querySelectorAll(".movieDescription");
   const movieInfoContainer = document.querySelector(".textContent")
+  
+  
+  // Function to fetch movie details and trailer
+  async function fetchMovieDetails(movieId, callback) {
+    const detailsUrl = `${baseUrl}/movie/${movieId}?api_key=${apiKey}&language=en-US`;
+    
+    try {
+      const response = await fetch(detailsUrl);
+      const movieDetails = await response.json();
 
+      // Check if the movie has videos (trailers)
+      if (movieDetails.videos && movieDetails.videos.results.length > 0) {
+        const trailerKey = movieDetails.videos.results[0].key; // Assuming the first video is the trailer
+        callback(trailerKey); // Call the callback with the video ID
+      } else {
+        console.log("No trailers found for this movie.");
+      }
+    } catch (error) {
+      console.error("Error fetching movie details:", error);
+    }
+  }
+
+  // Attach click event listeners to movie cards
+  movieInfoContainer.addEventListener('click', (event) => {
+    const clickedMovieCard = event.target.closest('.movieCard');
+    if (clickedMovieCard) {
+      const movieId = clickedMovieCard.getAttribute('data-movie-id');
+      
+      // Update the player with the trailer of the clicked movie
+      fetchMovieDetails(movieId, (trailerKey) => {
+        updatePlayer(trailerKey);
+      });
+    }
+  });
+  
   // Set up the API URL
   const apiUrl = `${baseUrl}/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
 
@@ -53,7 +87,6 @@ document.addEventListener("DOMContentLoaded", async function() {
     });
   });
 });
-
 // Load YouTube Player API asynchronously
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
