@@ -1,13 +1,19 @@
 # project-1
+ShelfMovies
+   A simple movie website
 
 ## Website link
+-Deployed -  https://miekooooo.github.io/project-1/
+-GitHub repo - https://github.com/Miekooooo/project-1
 
-- 
 
 ## Instructions
-1. 
-2. 
-3. 
+1.Launch website
+2.Find a movie either by skimming through the selection or through the search bar.
+3.Once a movie is found hover over the poster to get the movie’s name and information
+4.Click the poster to play the trailer through the Youtube player
+
+
 
 ## Description
 - This is a simple movie API project that allows users to search for movies and retrieve details and trailer about them. The project is built using HTML, CSS, and JavaScript, and it utilizes a two third-party movie APIs to fetch movie data.
@@ -31,31 +37,24 @@ Through this project, I learned how to make API requests using JavaScript's fetc
 -Responsive design that works well on various screen sizes
 -User-friendly interface with clear search results
 
-- 
-- 
 
 ## Screenshots
 
-- 
-- 
-- 
+![Alt text](image-1.png)
+![Alt text](image-2.png)
 
-## Installation
 
-- 
+
 
 ## Usage
+What technologies were used?
+ - TMDB API along with Youtube IFrame API
 
-- 
 
 ## Credits
+-http://www.moviedb.org/
+-http://www.youtube.com/
 
-- 
-- 
-- 
-- 
-- 
-- 
 
 ## License 
 
