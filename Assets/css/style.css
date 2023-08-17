@@ -20,11 +20,11 @@ h1 {
     text-shadow: 8px 8px 10px black;
 }
 
-#search-movies {
+#search-container {
     background-color: #A40505;
 }
 
-#search-movies {
+#search-container {
     background-color: #A40505;
 }
 
@@ -49,10 +49,12 @@ input {
 .nav-link:hover {
     color: black;
 }
+
 .nav-link {
     font-weight: bold;
     color: black;
-    margin: 60px;
+    margin: 100px;
+    padding: auto;
 }
 
 .nav-link:hover {
@@ -60,14 +62,14 @@ input {
 }
 
 
-#search-btn{
+#search-button{
     background-color: rgb(224, 98, 98);
     border-radius: 5px;
     border-color: black;
     color: white;
 }
 
-#search-btn{
+#search-button{
     background-color: rgb(240, 81, 81);
     border-radius: 5px;
     border-color: black;
@@ -80,12 +82,13 @@ nav ul {
 }
 
 #nav-list {
-    background-image: url(/Assets/popcorn.jpg);
+    background-image: url(../popcorn.jpg);
     background-size: cover;
-    padding: 15px;
+    padding: 20px;
     box-shadow: 5px 10px 10px black;
     display: flex;
     justify-content: space-around;
+    justify-content: center;
 }
 
 nav li {
@@ -126,4 +129,45 @@ body{
 
 body{
     color: white;
+}
+
+footer{
+    display: block;
+}
+
+.textContent {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+}
+
+.movieCard {
+    width: 100%;
+    text-align: center;
+}
+
+.hide{
+    display: none;
+}
+
+.movieCard:hover .hide{
+    display: block;
+}
+
+.moviePoster:hover{
+    cursor: pointer;
+    box-shadow: 10px 15px 15px black;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .textContent {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .textContent {
+        grid-template-columns: auto;
+    }
 }

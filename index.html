@@ -1,83 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>ShelfMovies</title>
-    <link rel="stylesheet" href="./Assets/css/style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>ShelfMovies</title>
+        <link rel="stylesheet" href="./Assets/css/style.css">
+    </head>
     <body>
-        <header>
-            <h1>SHELFMOVIES</h1>
-            <nav id = "search-movies">
-                <input type="text" placeholder = "Search Movie">
-                <button id = "search-btn">Search</button>
-            </nav>
-        </header>
-        <nav id = "nav-list">
-            <nav class="navbar">
-            </nav>
-             <ul>
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">Movies</a></li>
-                <li><a href="#" class="nav-link">About</a></li>
-                <!-- Add more navigation links if needed -->
-            </ul>
-        </nav>
-        
         <body>
-            <!-- Header and Navigation code here -->
-            <section class='textContent'>
-                <h2>Barbie<h2>
-                <img src="" alt="Movie Poster">
-                <p class='movieDescription'>Loading movie description...</p>
-            </section>
+            <header>
+                <h1>SHELFMOVIES</h1>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="search...">
+                    <button id="search-button">Search</button>
+                </div>
+                <div id="search-results">
+                </div>
+            </header>
+            <nav id="nav-list">
+                <nav class="navbar">
+                </nav>
 
-            <section class='textContent'>
-                <h2>tt15398776</h2>
-                <img src="" alt="Movie Poster">
-                <p class='movieDescription'>Loading movie description...</p>
-            </section>
+                <ul>
+                    <li><a href="#" class="nav-link" id = "homeBtn" onClick="reload()">Home</a></li>
+                    <li><a href="#movies" class="nav-link">Movies</a></li>
+                    <li><a href="#footer" class="nav-link">About</a></li>
+                    <!-- Add more navigation links if needed -->
+                </ul>
 
-            <section class='textContent'>
-                <h2>tt15398776</h2>
-                <img src="" alt="Movie Poster">
-                <p class='movieDescription'>Loading movie description...</p>
-            </section>
+            </nav>
+            <body>
+                <section id="youtube-section" class="hide">
+                        <div id="player"></div>
+                        </section>
+                        <!-- Header and Navigation code here -->
+                        <section class='textContent' id="movies">
+                        </section>
+                        <!-- Add more movie sections as needed -->
+                    </body>
+                </body>
+                    <!-- Search results will be displayed here -->
+                <script src="./Assets/js/script.js"></script>
+            </body>
+        </html>
 
-            <section class='textContent'>
-                <h2>tt15398776</h2>
-                <img src="" alt="Movie Poster">
-                <p class='movieDescription'>Loading movie description...</p>
-            </section>
-
-            <section class='textContent'>
-                <h2>tt15398776</h2>
-                <img src="" alt="Movie Poster">
-                <p class='movieDescription'>Loading movie description...</p>
-            </section>
-
-            <section class='textContent'>
-                <h2>tt15398776</h2>
-                <img src="" alt="Movie Poster">
-                <p class='movieDescription'>Loading movie description...</p>
-            </section>
-
-            <section class='textContent'>
-                <h2>tt15398776</h2>
-                <img src="" alt="Movie Poster">
-                <p class='movieDescription'>Loading movie description...</p>
-            </section>
-            <!-- Add more movie sections as needed -->
-        
-        </body>
-        <section>
-            <button id="changeVideoButton">Change Video</button>
-            <div id="player"></div>
-        </section>
-    </body>
-    
-    <!-- Your website content goes here -->
-    <script src="./Assets/js/script.js"></script>
-</body>
-</html>
+        <!-- <button id="changeVideoButton">Change Video</button> -->
+        <footer id="footer">SHELFMOVIES 2023</footer>
