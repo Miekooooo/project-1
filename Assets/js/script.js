@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", async function() {
     const response = await fetch(apiUrl);
     const responseData = await response.json();
     const movieInfo = responseData.results;
+    
 
     for(let i = 0; i < movieInfo.length; i++) {
       const movieCard = document.createElement("div")

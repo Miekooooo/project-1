@@ -2,50 +2,38 @@
 
 ## Website link
 
-- 
+- https://miekooooo.github.io/project-1/
 
-## Instructions
-1. 
-2. 
-3. 
 
 ## Description
 - 
-
-
-- "what was my motivation?" 
-- "why did I build this project?" 
-- "what problem does it solve?" 
-- "what did I learn?" 
+This website takes the most popular movies out right now and shows the movie poster to the user. You can hover over a movie poster and get a description of the movie and click on the poster to be taken to the trailer at the top of the page. Browse through the movies and see which one sparks an interest. 
 
 ## Features
 
-- 
-- 
-- 
+- www.moviedb.org
+
+- www.youtube.com
+
 
 ## Screenshots
 
-- 
-- 
-- 
+- md
+![screenshot of application](./assests/Screenshot%20(16).png)
 
-## Installation
-
+md
+![screenshot of application](./assests/Screenshot%20(17).png)
+- 
 - 
 
 ## Usage
 
-- 
+- Use this to look at the most popular movies and to read a description and watch the trailer. 
 
 ## Credits
 
-- 
-- 
-- 
-- 
-- 
-- 
+- www.moviedb.org
+- www.youtube.com
 
 ## License 
 
